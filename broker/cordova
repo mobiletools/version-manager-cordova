@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+/* Copyright (c) 2015 Intel Corporation. All rights reserved.
+* Use of this source code is governed by a MIT-style license that can be
+* found in the LICENSE file.
+*/
+
+"use strict";
+
+
+
+var path=require("path");
+var fs=require("fs");
+var cvmFolder=".cvm";
+
+
+var cliArgs=process.argv.slice(2);
+
+var isWin32=(process.platform === "win32");
+function getUserHome() {
+  return process.env[isWin32 ? "USERPROFILE" : "HOME"];
+}
+
+var cvmrc=path.join(getUserHome(),cvmFolder);
+
+var globalBinPath=isWin32?path.join(getUserHome(),"AppData","Roaming","npm"):path.join("/","usr","local","bin");
+
+globalBinPath=path.join(globalBinPath,"cordova");
+if(isWin32){
+    globalBinPath+=".cmd";
+}
+
+
+var cmvrc=path.join(getUserHome(),".cvmrc");
+
+var spawn;
+if(!fs.existsSync(cvmrc)){
+    console.log("No .cvmrc file found");
+
+}
+
+else {
+    var version=fs.readFileSync(cmvrc).toString();
+    var child;
+    if(version===""||version.length===0){
+        //use the system version
+        spawn = require("child_process").spawn;
+        child = spawn(globalBinPath,cliArgs,{ stdio: "inherit" });
+        child.on("error",function(res){
+            console.log(res);
+        });
+    }
+    else {
+        //cvm version
+
+        var cvmPath=path.join(getUserHome(),".cvm",version,"node_modules","cordova","bin","cordova");
+        if(isWin32){
+            cvmPath+=".cmd";
+        }
+        if(!fs.existsSync(cvmPath)){
+            console.log("cvm Cordova version not found");
+        }
+        else {
+            spawn = require("child_process").spawn;
+            child = spawn(cvmPath,cliArgs,{ stdio: "inherit" });
+            child.on("error",function(res){
+                console.log(res);
+            });
+        }
+    }
+}

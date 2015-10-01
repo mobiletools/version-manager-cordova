@@ -1,0 +1,34 @@
+{
+  "name": "version-manager-cordova-software",
+  "version": "0.0.1",
+  "description": "Version Manager for Cordova* Software",
+  "main": "bin/cvm",
+  "bin": {
+    "cvm":"./bin/cvm"
+  },
+  "scripts": {
+    "run": "bin/cvm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+      "type": "git",
+      "url" : "git://github.com/mobiletools/version-manager-cordova-software.git"
+  },
+  "keywords": [
+    "cordova",
+    "version manager",
+    "cli",
+    "phonegap"
+  ],
+  "author": "Ian Maffett <ian.maffett@intel.com>",
+  "license": "MIT",
+  "copyright":"Intel 2015",
+  "dependencies": {
+    "rimraf": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "intercept-stdout": "^0.1.1",
+    "mocha": "^2.2.5"
+  }
+}
