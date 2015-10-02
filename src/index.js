@@ -150,6 +150,22 @@ var CVMCLI = {
                         }
                     );
             }
+            else if(cmd==="remote") {
+                exec = require("child_process").exec;
+                child = exec("npm view cordova versions" ,
+                    function(error,stdout){
+                        if(error){
+                            console.log("Error "+error);
+                        }
+                        else {
+                            console.log("Cordova versions available\n");
+                            var out=stdout.replace("[","").replace("]","");
+                            out=out.replace(/["']/g,"")
+                            console.log(out);
+                        }
+                    }
+                );
+            }
             else {
                 return console.log(CLIBanner+cliCommands);
             }

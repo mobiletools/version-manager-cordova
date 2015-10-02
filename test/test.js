@@ -139,5 +139,23 @@ describe("cvm", function(){
 
       });
     });
+    it("Should list versions",function(done){
+      var banner=spawn("../bin/cvm",["remote"],{});
+      var buffer=null;
+      this.timeout(0);
+      banner.stdout.on("data",function(data){
+        buffer+=data;
+      });
+      banner.stderr.on("data",function(data){
+        console.log(data);
+        done();
+      });
+      banner.on("close",function(){
+        buffer.indexOf("5.1.1").should.not.equal(-1);
+        buffer.indexOf("0.0.0-fake").should.not.equal(-1);
+        done();
+
+      });
+    });
   });
 });
