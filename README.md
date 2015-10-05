@@ -2,6 +2,8 @@
 
 This tool will help you install and use multiple versions of Cordova.  We create a folder .cvm and install the versions in there.
 
+<img src="http://imgur.com/MjWq3aO">
+
 ## Installation
 
 Use NPM* for installation
