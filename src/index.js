@@ -141,7 +141,7 @@ var CVMCLI = {
                 exec = require("child_process").exec;
                     child = exec("cordova --version" ,
                         function(error,stdout){
-                            if(error){
+                            if(error) {
                                 console.log("Error "+error);
                             }
                             else {
@@ -151,6 +151,7 @@ var CVMCLI = {
                     );
             }
             else if(cmd==="remote") {
+                var filter=cliArgs[1];
                 exec = require("child_process").exec;
                 child = exec("npm view cordova versions" ,
                     function(error,stdout){
@@ -160,8 +161,16 @@ var CVMCLI = {
                         else {
                             console.log("Cordova versions available\n");
                             var out=stdout.replace("[","").replace("]","");
-                            out=out.replace(/["']/g,"")
-                            console.log(out);
+                            out=out.replace(/["']/g,"");
+                            out=out.replace(/(\r\n|\n|\r)/gm,"");
+                            out=out.replace(/\ /gm,"");
+                            out=out.split(",");
+                            if(filter){
+                                out = out.filter(function(data){
+                                  return data.indexOf(filter)===0;
+                                });
+                            }
+                            console.log(out.join("\n\r"));
                         }
                     }
                 );
