@@ -1,6 +1,6 @@
 {
   "name": "version-manager-cordova-software",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Version Manager for Cordova* Software",
   "main": "bin/cvm",
   "bin": {
