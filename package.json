@@ -1,6 +1,6 @@
 {
   "name": "version-manager-cordova-software",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Version Manager for Cordova* Software",
   "main": "bin/cvm",
   "bin": {
@@ -13,6 +13,9 @@
   "repository": {
       "type": "git",
       "url" : "git://github.com/mobiletools/version-manager-cordova-software.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/mobiletools/version-manager-cordova/issues"
   },
   "keywords": [
     "cordova",

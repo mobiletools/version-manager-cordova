@@ -84,6 +84,9 @@ var CVMCLI = {
             }
             else if(cmd==="install"){
                 version=cliArgs[1];
+                if(!version){
+                    return console.log("Please specify Cordova Version");
+                }
                 thePath=path.join(CVMPath,version);
                 if(fs.existsSync(thePath)){
                     console.log("Version already installed");
