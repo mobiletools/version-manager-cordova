@@ -200,6 +200,9 @@ var CVMCLI = {
             console.log("cvm system configuration complete");
             console.log("Please add the following line to your shell profile");
             console.log("export PATH='$HOME/.cvm:$PATH'");
+            console.log("On Windows, add the following to your PATH env variable");
+            console.log("%HOMEPATH%\.cvm");
+            console.log("After you've updated your path, type 'cvm' on the command-line to get started.");
         }
         return true;
     },
