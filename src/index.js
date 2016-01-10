@@ -44,9 +44,12 @@ var cliCommands="Available Tasks:\n\n"+
 "       uninstall [5.1.1] - Uninstall a cordova version\n"+
 "       use [5.1.1] - Switch to a specific version of cordova\n"+
 "       version - Show current version of Cordova\n"+
-"       remote - List available remote versions of cordova to install\n\n"+
+"       remote - List available remote versions of cordova to install\n"+
+"       \n"+
 "       --- remember to add the following to your shell profile --\n"+
-"       export PATH=\"$HOME/.cvm:$PATH\"";
+"       export PATH=\"$HOME/.cvm:$PATH\"\n"+
+"       --- on Windows, add the following to your local PATH --\n"+
+"       \%HOMEPATH\%\\.cvm";
 
 
 
@@ -200,7 +203,7 @@ var CVMCLI = {
             console.log("cvm system configuration complete");
             console.log("Please add the following line to your shell profile");
             console.log("export PATH='$HOME/.cvm:$PATH'");
-            console.log("On Windows, add the following to your PATH env variable");
+            console.log("On Windows, add the following to your local PATH env variable");
             console.log("%HOMEPATH%\.cvm");
             console.log("After you've updated your path, type 'cvm' on the command-line to get started.");
         }
