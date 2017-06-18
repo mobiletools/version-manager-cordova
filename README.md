@@ -19,12 +19,12 @@ npm install -g version-manager-cordova-software
 ```
 ./bin/cvm
 
-       list - list available covdova versions installed
-       install [5.1.1] - Install a cordova version
-       uninstall [5.1.1] - Uninstall a cordova version
-       use [5.1.1] - Switch to a specific version of cordova
+       list - list available Cordova versions installed
+       install [5.1.1] - Install a Cordova version
+       uninstall [5.1.1] - Uninstall a Cordova version
+       use [5.1.1] - Switch to a specific version of Cordova
        version - List current version of Cordova
-       remote - List available remote versions of cordova to install
+       remote - List available remote versions of Cordova to install
 ```
 
 
