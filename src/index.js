@@ -39,10 +39,10 @@ var CLIBanner=""+
 "============================\n\n";
 
 var cliCommands="Available Tasks:\n\n"+
-"       list - list available covdova versions installed\n"+
-"       install [5.1.1] - Install a cordova version\n"+
-"       uninstall [5.1.1] - Uninstall a cordova version\n"+
-"       use [5.1.1] - Switch to a specific version of cordova\n"+
+"       list - list available Cordova versions installed\n"+
+"       install [5.1.1] - Install a Cordova version\n"+
+"       uninstall [5.1.1] - Uninstall a Cordova version\n"+
+"       use [5.1.1] - Switch to a specific version of Cordova\n"+
 "       version - Show current version of Cordova\n"+
 "       remote - List available remote versions of cordova to install\n\n"+
 "       --- remember to add the following to your shell profile --\n"+
